@@ -4,6 +4,8 @@ onready var startMenu = $Control/startmenu
 onready var newsWindow = $Control/newsBox
 onready var mil_window = $Military/window
 onready var res_window = $Resource/window
+onready var social_window = $Social/window
+onready var meme = $meme/WindowDialog
 
 func _ready():
 	startMenu.visible = false
@@ -57,6 +59,8 @@ func _on_resource_pressed():
 func _on_social_pressed():
 	print("this is social")
 	
+	social_window.visible = true
+	
 	# close startmenu
 	menuClose()
 	
@@ -69,7 +73,6 @@ onready var news_info = $Control/newsBox/newsInfo
 #
 # old data
 onready var dataOld = [news_title.text, news_image.texture, news_info.text]
-
 # news window-next button
 func _on_next_pressed():
 #	print("you pressed next in news window!")
@@ -77,7 +80,7 @@ func _on_next_pressed():
 	# change data new
 	news_title.text = "Putin's Choice Over Peace!"
 	news_image.texture = load("res://assets/war.png")
-	news_info.text = "Russia's leader, Vladimir Vladimirovich Putin, has made his firm decision to begin war against Ukrainian forces."
+	news_info.text = "Russia's leader, Vladimir Vladimirovich Putin, has made his firm decision to begin war against Ukrainian forces.\n -20% military"
 	
 	# show previous btn
 	$Control/newsBox/previous.visible = true
@@ -86,7 +89,6 @@ func _on_next_pressed():
 	$Control/newsBox/next.visible = false
 	
 	pass
-
 
 func _on_previous_pressed():
 	
@@ -114,4 +116,8 @@ func _on_view_pressed():
 func _on_counter_pressed():
 	$Military/Donetsk/ConfirmationDialog.visible = true
 	
+	pass
+
+func _on_Button_pressed():
+	meme.visible = true
 	pass

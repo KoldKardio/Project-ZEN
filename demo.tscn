@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://demo.gd" type="Script" id=1]
 [ext_resource path="res://assets/tiny ukrs.png" type="Texture" id=2]
+[ext_resource path="res://assets/edge 1.png" type="Texture" id=3]
+[ext_resource path="res://assets/micro 2.png" type="Texture" id=4]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -136,10 +138,11 @@ texture = ExtResource( 2 )
 
 [node name="newsInfo" type="RichTextLabel" parent="Control/newsBox"]
 margin_left = 40.0
-margin_top = 150.0
+margin_top = 138.0
 margin_right = 256.0
-margin_bottom = 213.0
-text = "Russia invades Ukraine in claims of lands which they believe belongs to them."
+margin_bottom = 219.0
+text = "Russia invades Ukraine in claims of lands which they believe belongs to them.
+-20% civilians and -15% economy"
 
 [node name="next" type="Button" parent="Control/newsBox"]
 margin_left = 221.0
@@ -155,6 +158,107 @@ margin_top = 220.0
 margin_right = 83.0
 margin_bottom = 240.0
 text = "back"
+
+[node name="Resource" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="window" type="WindowDialog" parent="Resource"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -147.0
+margin_top = -114.0
+margin_right = 147.0
+margin_bottom = 114.0
+
+[node name="Panel" type="Panel" parent="Resource/window"]
+anchor_right = 1.0
+margin_bottom = 33.0
+
+[node name="Label" type="Label" parent="Resource/window/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "  National Resource Of Ukraine"
+valign = 1
+
+[node name="resources" type="GridContainer" parent="Resource/window"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 38.0
+margin_right = -7.0
+margin_bottom = -20.0
+
+[node name="Manpower" type="Panel" parent="Resource/window/resources"]
+margin_right = 280.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Resource/window/resources/Manpower"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 71.0
+margin_bottom = 19.0
+text = "Civilians"
+
+[node name="ProgressBar" type="ProgressBar" parent="Resource/window/resources/Manpower"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -24.0
+margin_right = 275.0
+margin_bottom = -10.0
+value = 25.0
+
+[node name="Military" type="Panel" parent="Resource/window/resources"]
+margin_top = 58.0
+margin_right = 280.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Resource/window/resources/Military"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 71.0
+margin_bottom = 19.0
+text = "Military"
+
+[node name="ProgressBar" type="ProgressBar" parent="Resource/window/resources/Military"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -24.0
+margin_right = 275.0
+margin_bottom = -10.0
+value = 75.0
+
+[node name="Economy" type="Panel" parent="Resource/window/resources"]
+margin_top = 116.0
+margin_right = 280.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Resource/window/resources/Economy"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 71.0
+margin_bottom = 19.0
+text = "Economy"
+
+[node name="ProgressBar" type="ProgressBar" parent="Resource/window/resources/Economy"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -24.0
+margin_right = 275.0
+margin_bottom = -10.0
+value = 50.0
 
 [node name="Military" type="Control" parent="."]
 anchor_right = 1.0
@@ -338,106 +442,132 @@ margin_bottom = 29.0
 rect_min_size = Vector2( 150, 52.5 )
 window_title = "Are You Sure.."
 
-[node name="Resource" type="Control" parent="."]
+[node name="Panel" type="Label" parent="Military/Donetsk/ConfirmationDialog"]
+margin_left = 21.0
+margin_top = 2.0
+margin_right = 136.0
+margin_bottom = 25.0
+text = "-15% on military"
+align = 1
+valign = 1
+
+[node name="Social" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="window" type="WindowDialog" parent="Resource"]
+[node name="window" type="WindowDialog" parent="Social"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -147.0
-margin_top = -114.0
-margin_right = 147.0
-margin_bottom = 114.0
+margin_left = -102.0
+margin_top = -30.0
+margin_right = 102.0
+margin_bottom = 30.0
 
-[node name="Panel" type="Panel" parent="Resource/window"]
-anchor_right = 1.0
-margin_bottom = 33.0
-
-[node name="Label" type="Label" parent="Resource/window/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Social/window"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "  National Resource Of Ukraine"
-valign = 1
+margin_left = 13.0
+margin_top = 10.0
+margin_right = -13.0
+margin_bottom = -10.0
 
-[node name="resources" type="GridContainer" parent="Resource/window"]
+[node name="facebook" type="Button" parent="Social/window/HBoxContainer"]
+margin_right = 56.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "facebk"
+
+[node name="twitter" type="Button" parent="Social/window/HBoxContainer"]
+margin_left = 60.0
+margin_right = 117.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "twitter"
+
+[node name="youtub" type="Button" parent="Social/window/HBoxContainer"]
+margin_left = 121.0
+margin_right = 178.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "youtub"
+
+[node name="meme" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 7.0
-margin_top = 38.0
-margin_right = -7.0
-margin_bottom = -20.0
+mouse_filter = 2
 
-[node name="Manpower" type="Panel" parent="Resource/window/resources"]
-margin_right = 280.0
-margin_bottom = 54.0
+[node name="Button" type="Button" parent="meme"]
+margin_left = 19.0
+margin_top = 25.0
+margin_right = 51.0
+margin_bottom = 57.0
+icon = ExtResource( 3 )
+align = 0
+icon_align = 1
+expand_icon = true
+
+[node name="WindowDialog" type="WindowDialog" parent="meme"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -259.0
+margin_top = -141.0
+margin_right = 259.0
+margin_bottom = 141.0
+window_title = "!edge"
+
+[node name="CenterContainer" type="CenterContainer" parent="meme/WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -100.0
+
+[node name="TextureRect" type="TextureRect" parent="meme/WindowDialog/CenterContainer"]
+margin_left = 209.0
+margin_top = 75.0
+margin_right = 309.0
+margin_bottom = 107.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="Resource/window/resources/Manpower"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 71.0
-margin_bottom = 19.0
-text = "Civilians"
+[node name="Panel" type="Panel" parent="meme/WindowDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -119.0
+margin_top = -10.0
+margin_right = 119.0
+margin_bottom = 10.0
 
-[node name="ProgressBar" type="ProgressBar" parent="Resource/window/resources/Manpower"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = -24.0
-margin_right = 275.0
-margin_bottom = -10.0
-value = 25.0
+[node name="Panel" type="Button" parent="meme/WindowDialog/Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -45.0
+margin_right = 2.0
+margin_bottom = 20.0
+text = "bing!"
 
-[node name="Military" type="Panel" parent="Resource/window/resources"]
-margin_top = 58.0
-margin_right = 280.0
-margin_bottom = 112.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="Button" type="Button" parent="meme/WindowDialog"]
+margin_left = 141.0
+margin_top = 190.0
+margin_right = 260.0
+margin_bottom = 210.0
+text = "download chrome"
 
-[node name="Label" type="Label" parent="Resource/window/resources/Military"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 71.0
-margin_bottom = 19.0
-text = "Military"
-
-[node name="ProgressBar" type="ProgressBar" parent="Resource/window/resources/Military"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = -24.0
-margin_right = 275.0
-margin_bottom = -10.0
-value = 75.0
-
-[node name="Economy" type="Panel" parent="Resource/window/resources"]
-margin_top = 116.0
-margin_right = 280.0
-margin_bottom = 170.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Resource/window/resources/Economy"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 71.0
-margin_bottom = 19.0
-text = "Economy"
-
-[node name="ProgressBar" type="ProgressBar" parent="Resource/window/resources/Economy"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = -24.0
-margin_right = 275.0
-margin_bottom = -10.0
-value = 50.0
+[node name="Label" type="Label" parent="meme/WindowDialog"]
+margin_left = 144.0
+margin_top = 168.0
+margin_right = 195.0
+margin_bottom = 182.0
+text = "Recents"
 
 [connection signal="pressed" from="Control/startmenu/GridContainer/news" to="." method="_on_news_pressed"]
 [connection signal="pressed" from="Control/startmenu/GridContainer/military" to="." method="_on_military_pressed"]
@@ -448,3 +578,4 @@ value = 50.0
 [connection signal="pressed" from="Control/newsBox/previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Military/window/regions/Donetsk/view" to="." method="_on_view_pressed"]
 [connection signal="pressed" from="Military/Donetsk/counter" to="." method="_on_counter_pressed"]
+[connection signal="pressed" from="meme/Button" to="." method="_on_Button_pressed"]
