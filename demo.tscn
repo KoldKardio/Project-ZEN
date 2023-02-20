@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://demo.gd" type="Script" id=1]
 [ext_resource path="res://assets/tiny ukrs.png" type="Texture" id=2]
 [ext_resource path="res://assets/edge 1.png" type="Texture" id=3]
 [ext_resource path="res://assets/micro 2.png" type="Texture" id=4]
+[ext_resource path="res://assets/ukraine.png" type="Texture" id=5]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -37,10 +38,88 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0.501961, 0.501961, 1 )
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+
 [node name="scanLines" type="ColorRect" parent="Control"]
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="meme" type="Control" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="Control/meme"]
+margin_left = 19.0
+margin_top = 25.0
+margin_right = 51.0
+margin_bottom = 57.0
+icon = ExtResource( 3 )
+align = 0
+icon_align = 1
+expand_icon = true
+
+[node name="WindowDialog" type="WindowDialog" parent="Control/meme"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -259.0
+margin_top = -141.0
+margin_right = 259.0
+margin_bottom = 141.0
+window_title = "!edge"
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/meme/WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -100.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/meme/WindowDialog/CenterContainer"]
+margin_left = 209.0
+margin_top = 75.0
+margin_right = 309.0
+margin_bottom = 107.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="Control/meme/WindowDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -119.0
+margin_top = -10.0
+margin_right = 119.0
+margin_bottom = 10.0
+
+[node name="Panel" type="Button" parent="Control/meme/WindowDialog/Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -45.0
+margin_right = 2.0
+margin_bottom = 20.0
+text = "bing!"
+
+[node name="Button" type="Button" parent="Control/meme/WindowDialog"]
+margin_left = 141.0
+margin_top = 190.0
+margin_right = 260.0
+margin_bottom = 210.0
+text = "download chrome"
+
+[node name="Label" type="Label" parent="Control/meme/WindowDialog"]
+margin_left = 144.0
+margin_top = 168.0
+margin_right = 195.0
+margin_bottom = 182.0
+text = "Recents"
 
 [node name="startmenu" type="Panel" parent="Control"]
 visible = false
@@ -111,7 +190,7 @@ margin_bottom = -3.0
 [node name="timeLabel" type="Label" parent="Control/taskbar/timePnl"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "TIME-HERE"
+text = "8:30"
 align = 1
 valign = 1
 
@@ -436,17 +515,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -78.0
-margin_top = -29.0
+margin_top = -33.0
 margin_right = 78.0
-margin_bottom = 29.0
+margin_bottom = 25.0
 rect_min_size = Vector2( 150, 52.5 )
 window_title = "Are You Sure.."
 
 [node name="Panel" type="Label" parent="Military/Donetsk/ConfirmationDialog"]
-margin_left = 21.0
-margin_top = 2.0
-margin_right = 136.0
-margin_bottom = 25.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 148.0
+margin_bottom = 22.0
 text = "-15% on military"
 align = 1
 valign = 1
@@ -497,78 +576,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "youtub"
 
-[node name="meme" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-
-[node name="Button" type="Button" parent="meme"]
-margin_left = 19.0
-margin_top = 25.0
-margin_right = 51.0
-margin_bottom = 57.0
-icon = ExtResource( 3 )
-align = 0
-icon_align = 1
-expand_icon = true
-
-[node name="WindowDialog" type="WindowDialog" parent="meme"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -259.0
-margin_top = -141.0
-margin_right = 259.0
-margin_bottom = 141.0
-window_title = "!edge"
-
-[node name="CenterContainer" type="CenterContainer" parent="meme/WindowDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -100.0
-
-[node name="TextureRect" type="TextureRect" parent="meme/WindowDialog/CenterContainer"]
-margin_left = 209.0
-margin_top = 75.0
-margin_right = 309.0
-margin_bottom = 107.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 4 )
-
-[node name="Panel" type="Panel" parent="meme/WindowDialog"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -119.0
-margin_top = -10.0
-margin_right = 119.0
-margin_bottom = 10.0
-
-[node name="Panel" type="Button" parent="meme/WindowDialog/Panel"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -45.0
-margin_right = 2.0
-margin_bottom = 20.0
-text = "bing!"
-
-[node name="Button" type="Button" parent="meme/WindowDialog"]
-margin_left = 141.0
-margin_top = 190.0
-margin_right = 260.0
-margin_bottom = 210.0
-text = "download chrome"
-
-[node name="Label" type="Label" parent="meme/WindowDialog"]
-margin_left = 144.0
-margin_top = 168.0
-margin_right = 195.0
-margin_bottom = 182.0
-text = "Recents"
-
+[connection signal="pressed" from="Control/meme/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/startmenu/GridContainer/news" to="." method="_on_news_pressed"]
 [connection signal="pressed" from="Control/startmenu/GridContainer/military" to="." method="_on_military_pressed"]
 [connection signal="pressed" from="Control/startmenu/GridContainer/resource" to="." method="_on_resource_pressed"]
@@ -578,4 +586,3 @@ text = "Recents"
 [connection signal="pressed" from="Control/newsBox/previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Military/window/regions/Donetsk/view" to="." method="_on_view_pressed"]
 [connection signal="pressed" from="Military/Donetsk/counter" to="." method="_on_counter_pressed"]
-[connection signal="pressed" from="meme/Button" to="." method="_on_Button_pressed"]

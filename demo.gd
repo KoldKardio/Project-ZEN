@@ -5,7 +5,7 @@ onready var newsWindow = $Control/newsBox
 onready var mil_window = $Military/window
 onready var res_window = $Resource/window
 onready var social_window = $Social/window
-onready var meme = $meme/WindowDialog
+onready var meme = $Control/meme/WindowDialog
 
 func _ready():
 	startMenu.visible = false
